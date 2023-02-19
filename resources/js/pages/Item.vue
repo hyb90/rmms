@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-12 mb-2">
                                 <button type="submit" :disabled="processing" @click="add" class="btn btn-primary btn-block">
-                                    {{ processing ? "Please wait" : "update" }}
+                                    {{ processing ? "Please wait" : "Add" }}
                                 </button>
                             </div>
                         </form>

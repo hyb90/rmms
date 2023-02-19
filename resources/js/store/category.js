@@ -57,7 +57,7 @@ export default {
         addItem({commit}){
             return axios.get('/api/categories').then(({data})=>{
                 commit('SET_CATEGORIES',data)
-                router.push({name:'menu'})
+                router.push({name:'dashboard'})
             }).catch(({response:{data}})=>{
                 console.log(data);
             })
@@ -77,7 +77,7 @@ export default {
             return axios.get('/api/categories').then(({data})=>{
                 console.log(data);
                 commit('SET_CATEGORIES',data)
-                router.push({name:'menu'})
+                router.push({name:'dashboard'})
             }).catch(({response:{data}})=>{
                 console.log(data);
             })

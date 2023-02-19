@@ -46,9 +46,9 @@
                 </div>
                 <br>
                 <div class="card">
-                    <div class="card-header">Menu</div>
+                    <div class="card-header justify-content-center">Menu Categories and Items</div>
                     <div class="card-body">
-                        {{menu.name}}
+                       Menu Name: {{menu.name}}
                     </div>
                     <ul v-for="item in categories">
                         <div class="card-header">Category Name : {{item.name}} - Discount : {{item.discount}}  <button class="btn btn-primary" @click="editCategory">Edit</button> <button class="btn btn-danger " @click="deleteCategory(item.id)">Delete</button></div>

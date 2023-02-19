@@ -2,27 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function user(Request $request)
     {
-        $this->middleware('auth');
+        return User::find($request->user()->id);
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function menu(Request $request)
     {
-        return view('home');
+        return Menu::where("user_id",$request->user()->id)->first();
+    }
+    public function updateMenu(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:menus,name,' . $id,
+            'discount' => 'required|numeric|between:0,100',
+        ]);
+        $menu= Menu::find($id);
+        if($menu){
+            $menu->update($validated);
+        }
+        return $menu;
+
     }
 }

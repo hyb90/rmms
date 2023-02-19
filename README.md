@@ -10,7 +10,7 @@ Simple impelemntation to SPA with Laravel 9 and Vue 3
 * Update menu info 
 * Add as needed of categories and support 4 levels of sub categories
 * Delete Category or Item
-* add discount on menu, category and item level with accomulation effect 
+* add discount on menu, category and item level with accumulation effect 
 
 ## How to use
 1. Clone the repository with git clone
@@ -39,7 +39,7 @@ Vite for faster build
 vite-bundle-visualizer
 
 ## Todo
-* Add toast on opertions results
+* Add toast on operations results
 * Add update function for item and category
 * ..
 

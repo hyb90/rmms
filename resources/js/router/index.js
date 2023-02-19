@@ -80,7 +80,7 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
     if (to.meta.middleware == "guest") {
         if (store.state.auth.authenticated) {
-            next({ name: "menu" })
+            next({ name: "dashboard" })
         }
         next()
     } else {

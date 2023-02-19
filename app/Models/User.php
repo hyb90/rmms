@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the Menu associated with the user.
+     */
+    public function menu()
+    {
+        return $this->hasOne(Menu::class);
+    }
 }

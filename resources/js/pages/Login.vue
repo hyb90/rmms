@@ -57,12 +57,20 @@ export default {
     methods:{
         ...mapActions({
             signIn:'auth/login',
+            getMenu:'dashboard/getMenu',
+            getCategory:'category/getCategory',
+            availableParentCategories:'category/availableParentCategories',
+            availableItemCategories:'category/availableItemCategories'
         }),
         async login(){
             this.processing = true
             await axios.get('/sanctum/csrf-cookie')
             await axios.post('/login',this.auth).then(({data})=>{
                 this.signIn()
+                this.getMenu()
+                this.getCategory()
+                this.availableParentCategories()
+                this.availableItemCategories()
             }).catch(({response})=>{
                 if(response.status===422){
                     this.validationErrors = response.data.errors

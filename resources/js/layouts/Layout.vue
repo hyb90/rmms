@@ -9,7 +9,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <router-link :to="{name:'menu'}" class="nav-link">Menu</router-link>
+                            <router-link :to="{name:'dashboard'}" class="nav-link">Dashboard</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="{name:'category'}" class="nav-link">Add Category</router-link>

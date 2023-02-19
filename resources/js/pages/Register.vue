@@ -66,6 +66,10 @@ export default {
     methods:{
         ...mapActions({
             signIn:'auth/login',
+            getMenu:'dashboard/getMenu',
+            getCategory:'category/getCategory',
+            availableParentCategories:'category/availableParentCategories',
+            availableItemCategories:'category/availableItemCategories'
 
         }),
         async register(){
@@ -74,6 +78,10 @@ export default {
             await axios.post('/register',this.user).then(response=>{
                 this.validationErrors = {}
                 this.signIn()
+                this.getMenu()
+                this.getCategory()
+                this.availableParentCategories()
+                this.availableItemCategories()
             }).catch(({response})=>{
                 if(response.status===422){
                     this.validationErrors = response.data.errors

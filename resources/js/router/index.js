@@ -12,6 +12,8 @@ const DahboardLayout = () => import('@/layouts/Layout.vue')
 
 /* Authenticated Component */
 const Dashboard = () => import('@/pages/Dashboard.vue')
+const Category = () => import('@/pages/Category.vue')
+const Item = () => import('@/pages/Item.vue')
 /* Authenticated Component */
 
 
@@ -47,6 +49,22 @@ const routes = [
                 component: Dashboard,
                 meta: {
                     title: `Dashboard`
+                }
+            },
+            {
+                name: "category",
+                path: '/',
+                component: Category,
+                meta: {
+                    title: `Category`
+                }
+            },
+            {
+                name: "item",
+                path: '/',
+                component: Item,
+                meta: {
+                    title: `Item`
                 }
             }
         ]
